@@ -21,7 +21,7 @@ echo "      Do you wanna Sync OrangeFox ?
 echo "      1. Yes "
 echo "      2. No  "
 read Ans
-if ( Ans = 1 )
+if [ $Ans = 1 ]
 then
 cd
 mkdir OrangeFox
