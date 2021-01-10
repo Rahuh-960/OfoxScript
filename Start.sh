@@ -17,13 +17,18 @@ cd
 bash bin/scripts/setup/android_build_env.sh
 bash bin/scripts/setup/install_android_sdk.sh
 
+echo "      Do you wanna Sync OrangeFox ? 
+echo "      1. Yes "
+echo "      2. No  "
+read Ans
+if ( Ans = 1 )
+then
 cd
 mkdir OrangeFox
 cd OrangeFox
 repo init -u https://gitlab.com/OrangeFox/Manifest.git -b fox_9.0 --depth=1
 repo sync -j8 --force-sync --optimized-fetch --no-clone-bundle
 cd
-
 cd OrangeFox
 source build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
@@ -31,5 +36,6 @@ export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
 export LC_ALL="C"
 export OF_MAINTAINER="Samyak , Ryukendo9"
 export FOX_VERSION="Unofficial"
+fi
 
 
